@@ -9,10 +9,10 @@ export default function Timer({ pomodoro, config }) {
                     {formatTime(pomodoro.remainingTime)}
                 </span>
                 <div className="flex flex-col items-center gap-3">
-                    <span className="text-[10px] uppercase font-pixel" style={{ color: "rgba(93, 64, 55, 0.6)" }}>
+                    <span className="text-[10px] uppercase text-pixel-brown/60 font-pixel">
                         {pomodoro.state}
                     </span>
-                    <span className="text-[10px] font-pixel" style={{ color: "rgba(93, 64, 55, 0.8)" }}>
+                    <span className="text-[10px] text-pixel-brown/80 font-pixel">
                         Cycle {pomodoro.currentCycle + 1} of {config.cyclesBeforeLongBreak ?? 4}
                     </span>
                 </div>
