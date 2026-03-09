@@ -22,6 +22,8 @@ export default function usePomodoroTimer(config) {
 
             if (!targetTimeRef.current) return
 
+            if (engine.state === "IDLE") return
+
             const remaining =
                 Math.max(
                     0,
