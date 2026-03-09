@@ -4,6 +4,7 @@ export default function Timer({ pomodoro, config }) {
     return (
         <div className="relative w-72 h-80 flex flex-col items-center justify-center border-4 border-pixel-brown bg-white shadow-[4px_4px_0px_0px_rgba(93,64,55,1)]">
             {/* juliette component */}
+            <div className="w-32 h-32 mb-4 bg-center bg-no-repeat bg-contain" data-alt="Cute pixel art cat chef wearing a small white hat" style={{backgroundImage: "url('../assets/img/cat.png')"}}></div>
             <div className="flex flex-col items-center gap-2">
                 <span className="text-3xl font-bold text-pixel-brown tracking-tighter">
                     {formatTime(pomodoro.remainingTime)}
