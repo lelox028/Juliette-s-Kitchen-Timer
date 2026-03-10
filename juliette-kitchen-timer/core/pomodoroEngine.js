@@ -90,4 +90,14 @@ export default class PomodoroEngine {
 
     }
 
+    updateConfig(newConfig) {
+
+        this.config = {
+            ...this.config,
+            ...newConfig
+        }
+
+        this.reset()
+    }
+
 }

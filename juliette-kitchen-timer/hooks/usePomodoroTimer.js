@@ -71,10 +71,18 @@ export default function usePomodoroTimer(config) {
 
     }
 
+    function updateConfig(newConfig){
+        const engine = engineRef.current
+        engine.updateConfig(newConfig)
+
+        setEngineState(engine.getState())
+    }
+
     return {
         ...engineState,
         start,
-        reset
+        reset,
+        updateConfig
     }
 
 }

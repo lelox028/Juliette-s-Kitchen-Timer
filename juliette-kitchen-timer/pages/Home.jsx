@@ -2,7 +2,9 @@ import usePomodoroTimer from "../hooks/usePomodoroTimer"
 import formatTime from "../utils/formatTime"
 import Timer from "../components/Timer"
 import Controls from "../components/Controls"
+import TimerConfig from "../components/TimerConfig"
 import { useState } from "react"
+import { useEffect } from "react"
 
 export default function Home() {
 
@@ -12,8 +14,12 @@ export default function Home() {
         longBreakDuration: 0.1 * 60,
         cyclesBeforeLongBreak: 4
     })
+    
     const timer = usePomodoroTimer(config)
-    console.log(timer)
+
+    useEffect(() => {
+        timer.updateConfig(config)
+    }, [config])
 
     return (
         <div className="bg-background-light font-pixel text-pixel-brown min-h-screen flex flex-col items-center">
@@ -31,6 +37,9 @@ export default function Home() {
 
                     <Controls timer={timer} />
                 </main>
+                <footer className="flex justify-center pb-8">
+                    <TimerConfig config={config} onConfigChange={setConfig} />
+                </footer>
             </div>
         </div>
     )
