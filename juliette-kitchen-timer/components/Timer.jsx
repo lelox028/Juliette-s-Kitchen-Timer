@@ -5,7 +5,7 @@ export default function Timer({ pomodoro, config }) {
     return (
         <div className="relative w-72 h-80 flex flex-col items-center justify-center border-4 border-pixel-brown bg-white shadow-[4px_4px_0px_0px_rgba(93,64,55,1)]">
             {/* juliette component */}
-            <Juliette />
+            <Juliette state={pomodoro.state} />
             <div className="flex flex-col items-center gap-2">
                 <span className="text-3xl font-bold text-pixel-brown tracking-tighter">
                     {formatTime(pomodoro?.remainingTime)}

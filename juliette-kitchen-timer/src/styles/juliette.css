@@ -1,0 +1,47 @@
+.juliette-idle {
+  width: 192px;
+  height: 192px;
+  background-image: url('/../../assets/sprites/Juliette_idle.png');
+  background-size: 960px 192px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  animation: idle 1.25s steps(5) infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes idle {
+  0% { background-position: 0px; }
+  100% { background-position: -960px; }
+}
+
+.juliette-focus {
+  width: 192px;
+  height: 192px;
+  background-image: url('/../../assets/sprites/Juliette_focus.png');
+  background-size: 384px 192px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  animation: focus .5s steps(2) infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes focus {
+  0% { background-position: 0px; }
+  100% { background-position: -384px; }
+}
+
+.juliette-short-break {
+  width: 192px;
+  height: 192px;
+  background-image: url('/../../assets/sprites/Juliette_short_break.png');
+  background-size: 384px 192px;
+  background-repeat: no-repeat;
+  background-position: 0px 0px;
+  animation: shortBreak 2s steps(2) infinite;
+  image-rendering: pixelated;
+}
+
+@keyframes shortBreak {
+  0% { background-position: 0px; }
+  100% { background-position: -384px; }
+}
