@@ -22,11 +22,11 @@ export default function Home() {
     }, [config])
 
     return (
-        <div className="bg-background-light font-pixel text-pixel-brown min-h-screen flex flex-col items-center">
+        <div className="bg-background-dark font-pixel text-pixel-brown min-h-screen flex flex-col items-center">
             <div className="relative flex h-auto min-h-screen w-full max-w-[480px] flex-col bg-background-light overflow-x-hidden p-6 gap-8 mx-auto font-pixel">
 
                 <header className="flex items-center justify-center py-4">
-                    <h1 className="text-pixel-brown text-sm leading-tight tracking-tight text-center font-pixel">
+                    <h1 className="text-pixel-pink text-sm leading-tight tracking-tight text-center font-pixel">
                         Juliette's Kitchen Timer
                     </h1>
                 </header>

@@ -12,11 +12,13 @@ export default {
   theme: {
     extend: {
       colors: {
-        "primary": "#FFF9C4",
-        "background-light": "#FFFDE7",
+        "primary": "#ffffdb",
+        "background-light": "#ffffdb",
+        "background-dark": "#d4d4b6",
         "pixel-brown": "#5D4037",
-        "pixel-pink": "#F48FB1",
-        "pixel-pink-light": "#FCE4EC",
+        "pixel-pink": "#ff99a1",
+        "pixel-pink-light": "#ffc5bb",
+        "pixel-pink-dark": "#a06689",
       },
       fontFamily: {
         "pixel": ["'Press Start 2P'", "cursive"],

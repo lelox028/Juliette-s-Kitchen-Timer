@@ -25,13 +25,13 @@ export default function TimerConfig({ config, onConfigChange }) {
         <>
             <button 
                 onClick={() => setIsOpen(true)}
-                className="p-3 border-4 border-pixel-brown bg-white shadow-[4px_4px_0px_0px_rgba(93,64,55,1)] text-pixel-brown hover:translate-y-[-2px] transition-transform flex items-center justify-center"
+                className="p-3 border-4 border-pixel-pink bg-background-light shadow-[4px_4px_0px_0px_rgba(160,102,137,1)] text-pixel-pink hover:translate-y-[-2px] transition-transform flex items-center justify-center"
             >
                 <span className="material-symbols-outlined text-2xl font-bold">settings</span>
             </button>
 
             {isOpen && (
-                <div className="fixed absolute inset-x-6 bottom-24 bg-white border-4 border-pixel-brown shadow-[8px_8px_0px_0px_rgba(93,64,55,1)] p-6 z-50">
+                <div className="fixed absolute inset-x-6 bottom-24 bg-white border-4 border-pixel-pink shadow-[8px_8px_0px_0px_rgba(93,64,55,1)] p-6 z-50">
                     <div className="flex justify-between items-center mb-6">
                         <h3 className="text-[12px] font-pixel text-pixel-brown">Timer Settings</h3>
                         <button 
