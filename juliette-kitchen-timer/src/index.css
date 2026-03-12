@@ -6,5 +6,7 @@
 @layer base {
   body {
     min-height: max(884px, 100dvh);
+    position: fixed;
+    width: 100%;
   }
 }
