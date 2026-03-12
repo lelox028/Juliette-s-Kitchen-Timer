@@ -7,6 +7,7 @@ export default function usePomodoroTimer(config) {
     const targetTimeRef = useRef(null)
     const workerRef = useRef(null)
     const wakeLockRef = useRef(null)
+    const workerActiveRef = useRef(false)
 
     if (!engineRef.current) {
         engineRef.current = new PomodoroEngine(config)
@@ -29,8 +30,18 @@ export default function usePomodoroTimer(config) {
                 
                 if (isFinished) {
                     engine.handleSessionEnd()
-                    targetTimeRef.current = Date.now() + engine.remainingTime * 1000
                     notifyTimerComplete(engine)
+                    
+                    // Reiniciar inmediatamente con la nueva duración
+                    if (workerRef.current && workerActiveRef.current) {
+                        workerRef.current.postMessage({
+                            action: 'START',
+                            payload: {
+                                startTime: Date.now(),
+                                duration: engine.remainingTime
+                            }
+                        })
+                    }
                 }
                 
                 setEngineState(engine.getState())
@@ -67,6 +78,9 @@ export default function usePomodoroTimer(config) {
         const interval = setInterval(() => {
 
             const engine = engineRef.current
+
+            // No actualizar si el worker está activo
+            if (workerActiveRef.current) return
 
             if (!targetTimeRef.current) return
 
@@ -106,6 +120,9 @@ export default function usePomodoroTimer(config) {
         targetTimeRef.current =
             Date.now() + engine.remainingTime * 1000
 
+        // Marcar que el worker está activo
+        workerActiveRef.current = true
+
         // Mantener pantalla encendida
         if ('wakeLock' in navigator) {
             try {
@@ -135,6 +152,9 @@ export default function usePomodoroTimer(config) {
         const engine = engineRef.current
         engine.reset()
 
+        // Marcar que el worker no está activo
+        workerActiveRef.current = false
+
         // Detener worker
         if (workerRef.current) {
             workerRef.current.postMessage({ action: 'STOP' })
@@ -153,6 +173,9 @@ export default function usePomodoroTimer(config) {
     function updateConfig(newConfig){
         const engine = engineRef.current
         engine.updateConfig(newConfig)
+
+        // Marcar que el worker no está activo
+        workerActiveRef.current = false
 
         // Detener worker si es necesario
         if (workerRef.current) {
