@@ -63,8 +63,9 @@ export default function usePomodoroTimer(config) {
     // Función para notificaciones nativas
     const notifyTimerComplete = (engine) => {
         if ('Notification' in window && Notification.permission === 'granted') {
+            console.log('Mostrando notificación de sesión completa', engine.state)
             new Notification('¡Tiempo!', {
-                body: engine.state === 'FOCUSING' ? 'Descansa un poco' : 'Vuelve a trabajar',
+                body: engine.state !== 'FOCUS' ? 'Descansa un poco' : 'Vuelve a trabajar',
                 icon: '/icon-192.png',
                 badge: '/icon-192.png',
                 tag: 'pomodoro',
