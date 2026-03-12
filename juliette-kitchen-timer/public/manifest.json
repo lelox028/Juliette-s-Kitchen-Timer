@@ -1,0 +1,30 @@
+{
+  "name": "Juliette's Kitchen Timer",
+  "short_name": "Kitchen Timer",
+  "description": "Un pomodoro timer con Juliette, un gatito pixelado que cocina",
+  "start_url": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#FFFDE7",
+  "theme_color": "#5D4037",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/icon-maskable.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
