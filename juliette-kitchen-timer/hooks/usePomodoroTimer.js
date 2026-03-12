@@ -18,7 +18,7 @@ export default function usePomodoroTimer(config) {
 
     // Inicializar Web Worker
     useEffect(() => {
-        const worker = new Worker(new URL('../workers/timerWorker.js', import.meta.url), { type: 'module' })
+        const worker = new Worker(new URL('../src/workers/timerWorker.js', import.meta.url), { type: 'module' })
         
         worker.onmessage = (event) => {
             const { type, remainingTime, isFinished } = event.data
