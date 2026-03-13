@@ -3,7 +3,6 @@ import usePomodoroTimer from "../hooks/usePomodoroTimer"
 import Timer from "../components/Timer"
 import Controls from "../components/Controls"
 import TimerConfig from "../components/TimerConfig"
-import PwaInstallPrompt from "../components/PwaInstallPrompt"
 
 const DEFAULT_CONFIG = {
     focusDuration: 40 * 60,
@@ -40,7 +39,6 @@ export default function Home() {
 
     return (
         <div className="bg-background-light font-pixel text-pixel-brown min-h-screen flex flex-col items-center">
-            <PwaInstallPrompt />
             <div className="relative flex h-auto min-h-screen w-full max-w-[480px] flex-col bg-background-light overflow-x-hidden p-6 gap-8 mx-auto font-pixel">
 
                 <header className="flex items-center justify-center py-4">
