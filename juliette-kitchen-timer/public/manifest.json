@@ -1,7 +1,7 @@
 {
   "name": "Juliette's Kitchen Timer",
-  "short_name": "Kitchen Timer",
-  "description": "Un pomodoro timer con Juliette, un gatito pixelado que cocina",
+  "short_name": "Juliette's Kitchen Timer",
+  "description": "Una herramienta especial pensada con mucho cariño para ayudarte a gestionar tu tiempo en la cocina de manera eficiente y divertida.",
   "start_url": "/",
   "display": "standalone",
   "orientation": "portrait",
