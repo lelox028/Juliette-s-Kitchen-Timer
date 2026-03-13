@@ -31,6 +31,7 @@ export default function usePomodoroTimer(config) {
                 if (isFinished) {
                     engine.handleSessionEnd()
                     notifyTimerComplete(engine)
+                    playTimerSound(engine)
                     
                     // Reiniciar inmediatamente con la nueva duración
                     if (workerRef.current && workerActiveRef.current) {
@@ -72,6 +73,12 @@ export default function usePomodoroTimer(config) {
                 requireInteraction: true
             })
         }
+    }
+
+    const playTimerSound = (engine) => {
+        const sound = engine.state !== 'FOCUS' ? 'notification-bell' : 'notification-whistle-2'
+        const audio = new Audio('../assets/sounds/' + sound + '.wav')
+        audio.play()
     }
 
     useEffect(() => {
