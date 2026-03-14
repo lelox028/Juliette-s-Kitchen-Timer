@@ -11,6 +11,14 @@ Simple, cozy, and distraction-free.
 
 ---
 
+## 🚀 Try it out
+
+[👉 Click here to open the app!](https://julietteskitchentimer.vercel.app/)
+
+_(Replace the link above with your deployed app URL)_
+
+---
+
 ## ✨ Preview
 
 *(Screenshots or GIFs will go here once the animations are ready)*
