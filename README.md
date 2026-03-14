@@ -101,28 +101,6 @@ All animations are handmade pixel art.
 
 ---
 
-## 🧩 Project Structure
-
-```
-src
- ├ components
- │   ├ Timer
- │   ├ Juliette
- │   └ Controls
- │
- ├ hooks
- │   └ usePomodoroTimer
- │
- ├ assets
- │   ├ sprites
- │   └ sounds
- │
- └ pages
-     └ Home
-```
-
----
-
 ## 🎨 Art & Animation
 
 All pixel art animations are hand drawn using **LibreSprite**.
